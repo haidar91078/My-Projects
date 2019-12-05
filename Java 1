@@ -1,0 +1,203 @@
+/*This program will collect all the information to calculate a student's semester G.P.A.
+ * and display the courses, grades received, and the G.P.A.
+ * Created By: Haidar Alsalem
+
+ */
+import java.io.*;//we import java.io to use the File
+
+import javax.swing.*;//import javax.swing because we will be using the JOPtionPane.
+
+public class CIS215Haidar2ndProject 
+{
+
+	public static void main(String[] args) throws FileNotFoundException
+	
+	{   
+		PrintWriter outClasses= new PrintWriter("classes.txt"); //write data to (Classes.txt)
+		
+		
+		
+
+
+		
+	           //declare needed variables 
+		
+		
+				
+		            
+			        String strCredit;
+			        int intCredit;
+			        String strGradeLetter;
+					String strName;
+			        String strCourse;
+			       
+			        
+				    boolean boolLoop=true;        //
+				    String strLoop;               //these three will repeat the questions needed to calculate the GPA, until the user has no more classes to enter
+					char chrLoop;                 //
+					
+					
+
+			        
+			        
+			
+			        double dblGrade=0;            //
+			        double dblAllCredit=0;        //  these doubles will collect numbers entered by the user
+			        double dblWeigtedGrade=0;     //  to compute them eventually
+			        double dblGPA;                //
+			        
+			        
+			        
+			        
+				    
+				
+					strName=JOptionPane.showInputDialog("Welcome! What is your name?"); 
+					strName=strName.toUpperCase();
+					
+					
+			
+						while (boolLoop)     //this loop will repeat the needed questions until they have no more courses to enter
+							
+							
+					{ 
+			        strCourse=JOptionPane.showInputDialog(""+strName+" Please enter the name of the course."); 
+			        strCourse=strCourse.toUpperCase(); //will make the name to upper case
+			        
+			        
+			     
+			        
+			    
+          
+			        	
+			        	
+			      
+			              strCredit=JOptionPane.showInputDialog(""+strName+" What is the credit hours of "+strCourse+"");
+			            intCredit=Integer.parseInt(strCredit); //will convert the credit entered from a String to an integer
+			               
+
+			        {    
+			        	 if  (strCredit.equals("1")) 
+					        { dblAllCredit=dblAllCredit+intCredit; }
+			        	 else if  (strCredit.equals("2")) 
+					        {  dblAllCredit=dblAllCredit+intCredit; }
+			        	 else  if  (strCredit.equals("3")) 
+					        { dblAllCredit=dblAllCredit+intCredit; }
+			        	 else  if  (strCredit.equals("4")) 
+					        { dblAllCredit=dblAllCredit+intCredit; }
+			        	 else  if  (strCredit.equals("5"))
+					        { dblAllCredit=dblAllCredit+intCredit; }
+			        	 else if (strCredit.equals("6"))
+					        { dblAllCredit=dblAllCredit+intCredit; }
+			        	 else {JOptionPane.showMessageDialog(null, ""+strName+" this is an invlid input, try again"); } 
+		
+			        	 
+			        	 
+			        	 
+			        	
+			        }  					
+			         
+			
+			       
+			        	
+			        
+
+			        
+        
+                 {      strGradeLetter=JOptionPane.showInputDialog(""+strName+" PLease enter the letter grade you earned for "+strCourse+""); //gets the Letter grade to evaluate it.
+                 strCourse=strCourse.toUpperCase();
+							        if  (strGradeLetter.equals("A")||strGradeLetter.equals("a"))   
+							        { dblGrade=4*intCredit; } 
+							                
+							        else if  (strGradeLetter.equals("A-")||strGradeLetter.equals("a-"))	
+							        {dblGrade=3.7*intCredit;} 
+							        
+							        else  if  (strGradeLetter.equals("B+")||strGradeLetter.equals("b+"))     
+							        { dblGrade=3.2*intCredit; }
+							        
+							        else  if  (strGradeLetter.equals("B")||strGradeLetter.equals("b"))	
+							        {dblGrade=3*intCredit; } 
+							        
+							        else if  (strGradeLetter.equals("B-")||strGradeLetter.equals("b-"))	
+							        {dblGrade=2.7*intCredit; } 
+							        
+							        else  if  (strGradeLetter.equals("C+")||strGradeLetter.equals("c+"))	
+							        {dblGrade=2.2*intCredit; } 
+							        
+							        else if  (strGradeLetter.equals("C")||strGradeLetter.equals("c"))	
+							        {dblGrade=2*intCredit; } 
+							        
+							        else  if  (strGradeLetter.equals("C-")||strGradeLetter.equals("c-"))	
+							        {dblGrade=1.7*intCredit; } 
+							        
+							        else   if  (strGradeLetter.equals("D+")||strGradeLetter.equals("d+"))	
+							        {dblGrade=1.2*intCredit;} 
+							        
+							        else  if  (strGradeLetter.equals("D")||strGradeLetter.equals("d"))	
+							        {dblGrade=1*intCredit; } 
+							        
+							        else  if  (strGradeLetter.equals("D-")||strGradeLetter.equals("d-"))	
+							        {dblGrade=0.7*intCredit; } 
+							        
+							        else if (strGradeLetter.equals("F")||strGradeLetter.equals("f"))
+							        {dblGrade=0; } 
+							        
+							        else { JOptionPane.showMessageDialog(null, ""+strName+" this is an invaild input" ) ;  }  
+							        
+							        
+                 }	
+                 outClasses.println(strCourse); outClasses.println(strCredit);    outClasses.println(strGradeLetter);
+        
+	        dblWeigtedGrade=dblWeigtedGrade+dblGrade; //this will collect grade points earned by the student
+                    
+	        
+        
+						        do {    //this loop will validate the answer entered by the user Yes or No so they can enter more classes if they want
+						        strLoop=JOptionPane.showInputDialog(null, ""+strName+" Would you like to add another course? Y or N");
+								strLoop=strLoop.toUpperCase();
+								chrLoop=strLoop.charAt(0);
+								if (chrLoop!='Y'&& chrLoop!='N')
+								        {
+									     JOptionPane.showMessageDialog(null, ""+strName+" You answered incorrectly. Please enter Y or N");
+										
+								        	}
+							    	} 
+			             
+			               while(chrLoop!='Y'&& chrLoop!='N');
+				
+				          if (chrLoop=='N')
+				        	break;
+				          
+			         
+					}  
+					
+			
+				dblGPA=dblWeigtedGrade/dblAllCredit; //finally this will compute the GPA to display it in the following JOptionPane
+				
+				String strMessage;
+				strMessage=String.format(strName+".\nThe total credits for the semster is: %.1f"
+						+ " credits.\nThe weigted grade is: %.2f ponts.\nThe GPA is: %.2f",dblAllCredit, dblWeigtedGrade,dblGPA);
+						
+					
+				
+				JOptionPane.showMessageDialog(null, strMessage ); //display the GPA based on data entered by the student
+				
+				
+				
+				outClasses.println(strMessage); //writes data to the file
+	             
+				outClasses.close(); //closes the file
+				
+				System.exit(0);
+        
+		} 
+						
+}
+
+		
+
+
+
+
+
+
+
