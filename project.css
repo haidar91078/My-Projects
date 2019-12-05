@@ -1,0 +1,117 @@
+/*Haidar*/
+
+header, main, nav, footer, figure, figcaption {display: block;}
+
+iframe {    border-radius: 15px 50px 30px 5px; 
+          padding: 20px; 
+ }
+figure { padding-top: 28px;
+		 text-align: center; }
+figcaption { font-weight: bold;
+             font-size: 1.4em; } /*will apply the tyles for the text on the figcaption so they appear properly along withthe images*/
+
+
+
+header, h1 {text-align: center;
+           text-shadow: 2.5px 2.5px 2.5px #CCCCCC; 
+		    color: white; 
+			line-height: 200%;
+			font-size: 1.6em;}
+
+header {  background-color: #1E90FF;
+	     
+		 border-style: none;
+}
+.tit{margin-left: 30px; }
+#gallery ul { 
+              list-style-type: none;		/*will remove the list style type of the ul so they dont appear with the images*/	 
+}
+#gallery li { display: inline;  
+			  padding: 7px;
+}
+
+.big { font-size: 1.4em;  /*This will make the font size a little bigger as indicated*/ }
+
+table, a{    text-decoration: none;  }
+
+
+#wrapper {  background-color: #87CEFA;
+	        width: 92%;
+			margin: auto;
+     /*This wrapper will adjust the width of the page so the entire page and content will be centered*/    
+} 
+nav   { font-size: 1em;
+     font-weight: bold; 
+     float: left;	
+	 width: 190px;
+	 
+
+
+}
+
+.demo {cursor:pointer; /*Will apply the pointer to display when the user hover over the images*/}
+
+nav a{text-decoration: none;
+     padding: 15px;
+     display: block;
+	 border-bottom: 2px;
+     
+}
+nav li {padding: 5px; }
+nav a:visited { color: #0000FF;
+}
+nav a:hover {color: #CCCCCC; /*Will make the color gray when the uswer hover over them*/
+background-color: #EAEAEA; }
+
+nav, ul {list-style-type: none; /*will remove the type of the li*/
+      
+	  padding: 10px;
+	  
+	  }
+
+
+body { background-image: url(Media/backgr.jpg); 	
+           background-attachment: fixed; 
+			background-size: contain; /*will adjust the background-size of the background-image tp be contained*/ }
+main { 
+      margin-left: 265px;
+	  margin-right: 100px;
+	  font-family: Verda, Arial, sans-serif;
+	
+}	
+
+
+	  
+footer { font-size: .70em; 
+       font-style: italic;  
+       padding: 10px;
+        margin-left: 180px;	
+        clear:both;		/*wil clear the float so the footer appear properly*/
+	   }
+table { background-color: #CCCCCC; border: 1px;  border-collapse: collapse; margin: auto; /*these will apply the styles fot the table*/ }
+td, th { padding: 0.5em; border: 1px solid }
+tfoot {text-align: center; font-style: italic; font-size: 80%;}
+
+tr:nth-of-type(even){background-color: #696969;
+
+}
+.float { float: top;   
+ }
+ img {	border-style: none;
+	  border-radius: 10px;}
+	  
+@media only screen and (max-width: 1024px) /*these will make the site work on mobile devices and tablets*/
+{ 
+body { margin: 0; 
+        padding: 0; 
+		background-image: none;}
+#wrapper { width: auto; 
+          min-width: 0; 
+		  margin: 0; 
+}
+nav, nav ul, nav li { width: auto;}
+nav li {display: inline-block; padding: 0;}
+nav a {font-size: 1em;}
+nav ul {text-align: center; }
+main {font-size: 75%; margin: 0;}
+}

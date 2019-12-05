@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dammam Contact</title>
+<META charset="utf-8">
+<META name="description" content="Dammam is the capital city of Saudi Arabia's Eastern Province."><!--this is a brief description of the site-->
+<META name="keywords" content="Dammam, Saudi arabia, Eastern Province, dammam saudi,capital city of Saudi Arabia's Eastern Province,nice place,tourism saudi arabia,tourism ,beautiful, dammam tourism, dammam saudi">
+<link rel="icon" href="Media/dmm.ico" type="image/ico"><!--This will apply the favicon on my title bar-->
+<link rel="stylesheet" href="project.css">
+<!--[if lt IE 9]> 
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script> 
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+<header>
+<h1>Dammam City</h1>
+</header>
+<br>
+<a href="https://twitter.com/dammam_news" target="_blank"><img class="tit" src="Media/twitter.png" alt="twitter" height="25" width="35"></a>
+<a href="https://www.facebook.com/addammamksa/" target="_blank"><img src="Media/facebook.png" alt="facebook" height="25" width="35"></a><br>
+<br>
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="about.html">About the City</a></li>
+<li><a href="placestovist.html">Places to Visit</a></li>
+<li><a href="famous.html">Famous Places</a></li>
+<li><a href="images.html">Images</a></li>
+<li>Contact Us</li>
+</ul>
+</nav>
+<main>
+<br><br>
+<form name="form" action="http://webdevbasics.net/scripts/demo.php" onsubmit="return validateForm()" method="post" id="form">
+<fieldset>
+<legend>Your information</legend>
+<script>
+
+function validateForm() { 
+if (document.forms[0].firstname.value == "" ) { 
+
+    alert("Please input your name"); 
+    return false; 
+} 
+return true;
+}
+
+</script>
+<small>Required feild with *</small>
+<br><br>
+<label for="firstname">First Name: </label><input type="text" id="firstname" name="firstname" size="47" maxlength="15" tabindex="1">
+<br><br>
+<label for="email">Email: </label><input type="email" id="email" name="email" size="53" maxlength="50" required="required" accesskey="E">*
+<br><br>
+<label for="number">Mobile Number: </label><input type="text" id="number" name="number" size="43" maxlength="20">
+<br><br>
+How would you like to be contacted?
+<br><br>
+<input title="checkbox1" type="checkbox" id="email2" name="email2" checked="checked" >Email
+<input title="checkbox2" type="checkbox" id="mobile1" name="mobile1">Mobile
+<br><br>
+Are you 18 years old or older?
+<br><br>
+<input title="radio1" type="radio" id="yes" name="18years" value="yes" checked="checked"> Yes
+<input title="radio2" type="radio" id="no" name="18years" value="no"> No
+<br>
+<br><br><br>
+Message
+<br>
+<textarea title="textarea" name="textarea" id="textarea" cols="62" rows="8"></textarea>
+<br><br>
+<input type="submit" id="submit" name="submit" value="Submit Now">
+<br>
+</fieldset>
+
+</form>
+</main>
+<footer>
+Copyright &copy; 2017 <a href="mailto:Halsalem@dbq.edu">Halsalem@dbq.edu</a>
+<script>document.write("<h4>This page was last modified on: " + document.lastModified + "</h4>");</script>
+</footer>
+</div>
+</body>
+</html>

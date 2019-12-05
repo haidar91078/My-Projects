@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dammam Images</title>
+<META charset="utf-8">
+<META name="description" content="Dammam is the capital city of Saudi Arabia's Eastern Province."><!--this is a brief description of the site-->
+<META name="keywords" content="Dammam, Saudi arabia, Eastern Province, dammam saudi,capital city of Saudi Arabia's Eastern ProvinceKing Fahd International Airport,King Fahd Causeway,Sheraton Dammam Hotel,Iskan Dammam,Coral Island,Corniche,Sails Roundabout,dammam images, See the Beauty of Dammam images of dammam,nice place,tourism saudi arabia,tourism ,beautiful, dammam tourism, dammam saudi.">
+<link rel="icon" href="Media/dmm.ico" type="image/ico"><!--This will apply the favicon on my title bar-->
+<link rel="stylesheet" href="project.css">
+<!--[if lt IE 9]> 
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script> 
+<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#gallery a').hover(function(){
+		var galleryHref = $(this).attr('href');
+		var galleryAlt = $(this).attr('title');
+		$('figure img').attr({ src: galleryHref, alt: galleryAlt });
+		$('figcaption').html(galleryAlt);
+		});
+});
+</script>
+</head>
+<body>
+<div id="wrapper">
+<header>
+<h1>Dammam City</h1>
+</header>
+<br>
+<a href="https://twitter.com/dammam_news" target="_blank"><img class="tit" src="Media/twitter.png" alt="twitter" height="25" width="35"></a>
+<a href="https://www.facebook.com/addammamksa/" target="_blank"><img src="Media/facebook.png" alt="facebook" height="25" width="35"></a><br>
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="about.html">About the City</a></li>
+<li><a href="placestovist.html">Places to Visit</a></li>
+<li><a href="famous.html">Famous Places</a></li>
+<li>Images</li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+<main>
+<h2>See the Beauty of Dammam</h2>
+<small>Hover over the small images.</small>
+<br>
+<div id="gallery">
+ <ul>
+   <li>
+     <a href="Media/dmm1.jpg"  title="Corniche"><img src="Media/dmm1.jpg" width="85" height="55"  alt="Corniche"></a>
+   </li>
+   <li>
+     <a href="Media/dmm2.jpg" title="Sails Roundabout"><img src="Media/dmm2.jpg" width="85" height="55" alt="Sails Roundabout"></a>  
+   </li>
+   <li>
+     <a href="Media/dmm3.jpg" title="Coral Island"><img src="Media/dmm3.jpg" width="85" height="55" alt="Coral Island"></a>
+   </li>
+   <li>
+     <a href="Media/dmm4.jpg" title="Iskan Dammam"><img src="Media/dmm4.jpg" width="85" height="55" alt="Iskan Dammam"></a>
+   </li>
+   <li>
+     <a href="Media/dmm5.jpg" title="Sea Front"><img src="Media/dmm5.jpg" width="85" height="55" alt="Sea Front"></a>
+  </li>
+  <li>
+    <a href="Media/dmm6.jpg" title="King Fahd International Airport"><img src="Media/dmm6.jpg" width="85" height="55" alt="King Fahd International Airport"></a>
+  </li>
+     <li>
+     <a href="Media/dmm7.jpg" title="Sheraton Dammam Hotel"><img src="Media/dmm7.jpg" width="85" height="55" alt="Sheraton Dammam Hotel"></a>
+  </li>
+     <li>
+     <a href="Media/dmm8.jpg" title="King Fahd Causeway"><img src="Media/dmm8.jpg" width="85" height="55" alt="King Fahd Causeway"></a>
+  </li>
+ </ul>
+ <figure>
+  <img src="Media/dmm3.jpg" width="600" height="400" alt="Coral Island">
+  <figcaption>Iskan Dammam</figcaption>
+ </figure>
+</div>
+
+</main>
+<footer>
+Copyright &copy; 2017 <a href="mailto:Halsalem@dbq.edu">Halsalem@dbq.edu</a>
+<script>document.write("<h4>This page was last modified on: " + document.lastModified + "</h4>");</script>
+</footer>
+</div>
+</body>
+</html>
