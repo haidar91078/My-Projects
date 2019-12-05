@@ -1,0 +1,204 @@
+/*This program is for a Beechers to help taking orders in their ice
+ * cream store. The program will allow the user to select the type 
+ * cone, numbers of scoops, and the flavor of ice cream for the order.
+ * Created By: Haidar Alsalem
+ * Taught By: Ann Mauss.
+ */
+import javax.swing.*;//import javax.swing because we will be using the JOPtionPane.
+
+import java.io.*;//import java.io to use the File
+public class CIS215HaidarFinalProjectTest 
+{
+
+	public static void main(String[] args) throws FileNotFoundException
+	
+	{   PrintWriter outCones= new PrintWriter("order.txt"); //write data to (order.txt)
+		
+	CIS215HaidarFinalProjectOrder HH = new CIS215HaidarFinalProjectOrder();
+	HH.MM();
+	    
+	    String strMessage;
+	    String strMessage2;
+	    String strCone;
+	    String strScoop;
+	    String strFlavor;
+	   
+	    
+	    int intScoop;
+		
+        
+		
+		double dblTotal=0;
+		double dblSubTotal=0;
+		
+		double dblSC=.85;
+		double dblPC=1.10;
+		double dblWC=1.75;
+		
+		
+		
+		char chrConeSelection;
+		char chrFlavorSelection;
+		
+		boolean boolLoopp=true;
+
+		
+		 boolean boolLoop=true;        //
+		    String strLoop;               //for the big loop that will repeat the questions needed if the user wans to place another order
+			char chrLoop;   
+		
+		
+		String strName;
+		
+		strName=JOptionPane.showInputDialog("What is your name?"); 
+		strName=strName.toUpperCase();
+		
+		outCones.println("Customer:    "+strName+" \n");
+		
+		while (boolLoop) 
+		{ 
+			
+			do {
+		
+		strCone=JOptionPane.showInputDialog(""+strName+" What kind of cone do you want? (Enter the first letter of your selection)\n Sugar Cone\n Plain Cone\n Waffle Cone");
+		strCone=strCone.toUpperCase();
+		
+		
+		
+		chrConeSelection=strCone.charAt(0);		
+				
+		switch (chrConeSelection) //will evaluate the user's Cone type selection 
+		{		
+				
+		case 'S': 	
+			JOptionPane.showMessageDialog(null," "+strName+" your selection is Sugar Cone ");
+			dblSubTotal=dblSubTotal+dblSC;
+			boolLoopp= true;
+			break;
+		case 'P': 	
+			JOptionPane.showMessageDialog(null," "+strName+" your selection is Plain Cone ");
+			dblSubTotal=dblSubTotal+dblPC;
+			boolLoopp=true;
+			break;
+		case 'W': 	
+			JOptionPane.showMessageDialog(null," "+strName+" your selection is Waffle ");
+			dblSubTotal=dblSubTotal+dblWC;
+			boolLoopp=true;
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "You have entered an invalid letter. Enter a valid selection");
+			boolLoopp=false;
+		}
+		outCones.println("Cone:          "+strCone+" \n"); //will write the user's cone selection to the file
+			} while(!boolLoopp); //evaluates the answer, if right, it will exit the loop
+						
+		
+		do{
+		strScoop=JOptionPane.showInputDialog(""+strName+" How many scoops Would you like? (Enter a number)\n 1 Scoop\n 2 Scoops\n 3 Scoops");
+		intScoop=Integer.parseInt(strScoop);
+		outCones.println("Scoops:        "+strScoop+" \n");
+		
+		switch (intScoop)   //will evaluate the user's number of scoops selection
+
+		{
+			case 1: JOptionPane.showMessageDialog(null," "+strName+" your selection is 1 Scoop ");
+			dblSubTotal=dblSubTotal+.50;
+			boolLoopp=true;
+		    break;
+		
+			case 2: JOptionPane.showMessageDialog(null," "+strName+" your selection is 2 Scoops ");
+			dblSubTotal=dblSubTotal+1;
+			boolLoopp=true;
+		    break;
+		    
+			case 3: JOptionPane.showMessageDialog(null," "+strName+" your selection is 3 Scoops ");
+			dblSubTotal=dblSubTotal+1.50;
+			boolLoopp=true;
+		    break;
+		    
+			default: JOptionPane.showMessageDialog(null," "+strName+" your selection is invalid, enter 1, 2, or 3 ");
+			boolLoopp=false;
+		    break;
+		}
+		}while(!boolLoopp); //evaluates the answer, if right, it will exit the loop
+		
+		do {
+			strFlavor=JOptionPane.showInputDialog(""+strName+" What Flavor would you like? (Enter the first letter of your selection)\n Vanilla\n Chocolate\n Strawberry");
+			strFlavor=strFlavor.toUpperCase();
+			chrFlavorSelection=strFlavor.charAt(0);
+			outCones.println("Flavor:        "+strFlavor+" \n");
+			
+			switch (chrFlavorSelection)  //will evaluate the user's Flavor type selection
+			{
+			case 'V':  
+				JOptionPane.showMessageDialog(null," "+strName+" your selection is Vanilla ");
+				dblSubTotal=dblSubTotal+.10;
+	        	boolLoopp=true;
+	        	break;
+			case 'C': 
+				JOptionPane.showMessageDialog(null," "+strName+" your selection is Chocolate ");
+				dblSubTotal=dblSubTotal+.25;
+	        	boolLoopp=true;
+	        	break;
+			case 'S':
+				JOptionPane.showMessageDialog(null," "+strName+" your selection is 1 Strawberry ");
+				dblSubTotal=dblSubTotal+.35;
+	        	boolLoopp=true;
+	        	break;
+			default: 
+			JOptionPane.showMessageDialog(null," "+strName+" your input is invalid, enter the letter of your selection");
+			boolLoopp=false;
+		    break;
+	        
+			}
+			} while(!boolLoopp); //evaluates the answer, if right, it will exit the loop
+		
+		
+				
+		strMessage=String.format(""+strName+" The sub total of your purchase is:\t"
+	    		+ "$%.2f", dblSubTotal);
+		
+		
+		JOptionPane.showMessageDialog(null, strMessage);
+		
+				        do {    //this loop will validate the answer entered by the user Yes or No so they can place another order if they want
+				        strLoop=JOptionPane.showInputDialog(null, ""+strName+" Would you like to place another order? Y or N");
+						strLoop=strLoop.toUpperCase();
+						chrLoop=strLoop.charAt(0);
+						if (chrLoop!='Y'&& chrLoop!='N')
+						        {
+							     JOptionPane.showMessageDialog(null, ""+strName+" You answered incorrectly. Please enter Y or N");
+								
+						        	}
+					    	} 
+				 
+				   while(chrLoop!='Y'&& chrLoop!='N'); //evaluates the answer
+				
+				  if (chrLoop=='N')
+					break;
+		}	
+		
+		dblTotal=dblTotal+dblSubTotal;  //will do calculation 
+		
+		strMessage2=String.format(""+strName+" The total of your purchase is:\t"
+	    		+ "$%.2f", dblTotal);
+		outCones.println("Total:       $"+dblTotal+"");
+		
+		JOptionPane.showMessageDialog(null, strMessage2);
+		
+		CIS215HaidarFinalProjectOrder FF = new CIS215HaidarFinalProjectOrder(); //Calling the mesthod
+		FF.Final();
+		
+		
+        
+		outCones.close(); //closes the file
+		
+		System.exit(0);
+		
+        		
+		
+		   
+
+}  
+	}
+
